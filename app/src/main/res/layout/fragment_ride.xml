@@ -20,11 +20,6 @@
             android:tint="#000000"/>
     </RelativeLayout>
 
-    <com.mapbox.mapboxsdk.maps.MapView
-        android:id="@+id/mapView_fragment_rider"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/panel_fragment_rider"/>
 
     <RelativeLayout
         android:id="@+id/panel_fragment_rider"

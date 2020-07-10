@@ -13,8 +13,8 @@
         android:layout_marginStart="20dp">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/ic_menu"
             android:layout_centerInParent="true"
             android:tint="#000000"/>
@@ -34,6 +34,7 @@
         android:background="#FFFFFF">
 
         <RelativeLayout
+            android:id="@+id/route_relative_layout_fragment_ride"
             android:layout_width="match_parent"
             android:layout_height="65dp"
             android:layout_marginLeft="20dp"

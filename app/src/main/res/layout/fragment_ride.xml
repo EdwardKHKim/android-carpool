@@ -20,4 +20,39 @@
             android:tint="#000000"/>
     </RelativeLayout>
 
+    <com.mapbox.mapboxsdk.maps.MapView
+        android:id="@+id/mapView_fragment_rider"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/panel_fragment_rider"/>
+
+    <RelativeLayout
+        android:id="@+id/panel_fragment_rider"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_centerInParent="true"
+            android:background="#EEEEEE">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/nunito_sans_bold"
+                android:text="Where to?"
+                android:textSize="20sp"
+                android:layout_marginStart="20dp"
+                android:textColor="#000000"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
 </RelativeLayout>

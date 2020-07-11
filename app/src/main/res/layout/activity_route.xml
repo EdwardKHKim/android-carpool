@@ -38,7 +38,7 @@
                 <ImageView
                     android:layout_width="10dp"
                     android:layout_height="10dp"
-                    android:src="@drawable/ic_oval"
+                    android:src="@drawable/ic_square"
                     android:tint="#000000"
                     android:layout_centerVertical="true" />
 
@@ -95,7 +95,7 @@
                 <ImageView
                     android:layout_width="10dp"
                     android:layout_height="10dp"
-                    android:src="@drawable/ic_square"
+                    android:src="@drawable/ic_oval"
                     android:tint="#000000"
                     android:layout_centerVertical="true"/>
 

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -29,6 +30,7 @@ import com.mapbox.mapboxsdk.camera.CameraPosition;
 import com.mapbox.mapboxsdk.camera.CameraUpdate;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
 import com.mapbox.mapboxsdk.geometry.LatLng;
+import com.mapbox.mapboxsdk.geometry.LatLngBounds;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
@@ -189,7 +191,7 @@ public class RouteActivity extends AppCompatActivity implements OnMapReadyCallba
 
     private void initLayerOrigin(@NonNull Style loadedMapStyle) {
         loadedMapStyle.addImage(ICON_ID_ORIGIN, Objects.requireNonNull(BitmapUtils.getBitmapFromDrawable(
-                getResources().getDrawable(R.drawable.ic_oval))));
+                getResources().getDrawable(R.drawable.ic_square))));
 
         loadedMapStyle.addLayer(new SymbolLayer(ICON_LAYER_ID_ORIGIN, ROUTE_SOURCE_ID_ORIGIN).withProperties(
                 iconImage(ICON_ID_ORIGIN), iconOffset(new Float[]{0f, -8f})
@@ -198,7 +200,7 @@ public class RouteActivity extends AppCompatActivity implements OnMapReadyCallba
 
     private void initLayerDestination(@NonNull Style loadedMapStyle) {
         loadedMapStyle.addImage(ICON_ID_DESTINATION, Objects.requireNonNull(BitmapUtils.getBitmapFromDrawable(
-                getResources().getDrawable(R.drawable.ic_square))));
+                getResources().getDrawable(R.drawable.ic_oval))));
 
         loadedMapStyle.addLayer(new SymbolLayer(ICON_LAYER_ID_DESTINATION, ROUTE_SOURCE_ID_DESTINATION).withProperties(
                 iconImage(ICON_ID_DESTINATION), iconOffset(new Float[]{0f, -8f})
@@ -236,7 +238,7 @@ public class RouteActivity extends AppCompatActivity implements OnMapReadyCallba
                             editorOrigin.apply();
                         }
 
-                        mapboxMap.animateCamera(CameraUpdateFactory.newCameraPosition(
+                        mapboxMap.easeCamera(CameraUpdateFactory.newCameraPosition(
                                 new CameraPosition.Builder().target(new LatLng(((Point) carmenFeatureOrigin.geometry())
                                 .latitude(), ((Point) carmenFeatureOrigin.geometry()).longitude()))
                                 .zoom(14).build()), 4000);
@@ -257,6 +259,7 @@ public class RouteActivity extends AppCompatActivity implements OnMapReadyCallba
                     if (destinationTextView.getText().length() > 0) {
                         Point origin = Point.fromLngLat(originLatitude, originLongitude);
                         Point destination = Point.fromLngLat(destinationLatitude, destinationLongitude);
+
                         getRoute(style, origin, destination);
                     }
                 }
@@ -285,7 +288,7 @@ public class RouteActivity extends AppCompatActivity implements OnMapReadyCallba
                             editorDestination.apply();
                         }
 
-                        mapboxMap.animateCamera(CameraUpdateFactory.newCameraPosition(
+                        mapboxMap.easeCamera(CameraUpdateFactory.newCameraPosition(
                                 new CameraPosition.Builder().target(new LatLng(((Point) carmenFeatureDestination.geometry()).latitude(),
                                         ((Point) carmenFeatureDestination.geometry()).longitude()))
                                 .zoom(14).build()), 4000);
@@ -305,8 +308,19 @@ public class RouteActivity extends AppCompatActivity implements OnMapReadyCallba
                     initLayerRoute(style);
 
                     if (originTextView.getText().length() > 0) {
+
                         Point origin = Point.fromLngLat(originLatitude, originLongitude);
                         Point destination = Point.fromLngLat(destinationLatitude, destinationLongitude);
+
+                        LatLng originLocation = new LatLng(49.2838, -122.7932);
+                        LatLng destinationLocation = new LatLng(49.2765, -123.2177);
+
+                        LatLngBounds latLngBounds = new LatLngBounds.Builder()
+                                .include(originLocation)
+                                .include(destinationLocation)
+                                .build();
+
+                        mapboxMap.easeCamera(CameraUpdateFactory.newLatLngBounds(latLngBounds, 150), 5000);
 
                         getRoute(style, origin, destination);
                     }
@@ -376,7 +390,8 @@ public class RouteActivity extends AppCompatActivity implements OnMapReadyCallba
         nextActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(RouteActivity.this, ConfirmRideActivity.class);
+                startActivity(intent);
             }
         });
     }

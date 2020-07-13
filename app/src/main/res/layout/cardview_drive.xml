@@ -10,56 +10,15 @@
 
         <RelativeLayout
             android:id="@+id/general_information_cardview_drive"
-            android:layout_width="120dp"
-            android:layout_height="match_parent"
-            android:background="#000000">
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true">
-
-                <RelativeLayout
-                    android:id="@+id/time_cardview_drive"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true">
-
-                    <TextView
-                        android:id="@+id/textview_time_cardview_drive"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20sp"
-                        android:fontFamily="@font/nunito_sans_bold"
-                        android:text="7:30 AM"
-                        android:textColor="#FFFFFF" />
-
-                </RelativeLayout>
+            android:layout_width="100dp"
+            android:layout_height="match_parent">
 
 
-                <RelativeLayout
-                    android:id="@+id/date_cardview_drive"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/time_cardview_drive"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp">
-
-                    <TextView
-                        android:id="@+id/textview_date_cardview_drive"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="15sp"
-                        android:fontFamily="@font/nunito_sans_semibold"
-                        android:text="Sept / 01 / 20"
-                        android:textColor="#FFFFFF" />
-
-                </RelativeLayout>
-
-
-            </RelativeLayout>
-
-
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/car"
+                android:layout_centerInParent="true"/>
         </RelativeLayout>
 
         <RelativeLayout

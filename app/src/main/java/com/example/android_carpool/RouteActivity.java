@@ -74,6 +74,10 @@ public class RouteActivity extends AppCompatActivity implements OnMapReadyCallba
     Double destinationLongitude;
     TextView destinationTextView;
 
+    int distance;
+    Double formulaCost;
+    String carpoolCost;
+
     private static final int REQUEST_CODE_AUTOCOMPLETE_ORIGIN = 1;
     private static final int REQUEST_CODE_AUTOCOMPLETE_DESTINATION = 2;
     private static final String ROUTE_SOURCE_ID = "route-source-id";
@@ -189,7 +193,7 @@ public class RouteActivity extends AppCompatActivity implements OnMapReadyCallba
 
     private void initLayerOrigin(@NonNull Style loadedMapStyle) {
         loadedMapStyle.addImage(ICON_ID_ORIGIN, Objects.requireNonNull(BitmapUtils.getBitmapFromDrawable(
-                getResources().getDrawable(R.drawable.ic_square))));
+                getResources().getDrawable(R.drawable.ic_destination))));
 
         loadedMapStyle.addLayer(new SymbolLayer(ICON_LAYER_ID_ORIGIN, ROUTE_SOURCE_ID_ORIGIN).withProperties(
                 iconImage(ICON_ID_ORIGIN), iconOffset(new Float[]{0f, -8f})
@@ -198,7 +202,7 @@ public class RouteActivity extends AppCompatActivity implements OnMapReadyCallba
 
     private void initLayerDestination(@NonNull Style loadedMapStyle) {
         loadedMapStyle.addImage(ICON_ID_DESTINATION, Objects.requireNonNull(BitmapUtils.getBitmapFromDrawable(
-                getResources().getDrawable(R.drawable.ic_oval))));
+                getResources().getDrawable(R.drawable.ic_destination))));
 
         loadedMapStyle.addLayer(new SymbolLayer(ICON_LAYER_ID_DESTINATION, ROUTE_SOURCE_ID_DESTINATION).withProperties(
                 iconImage(ICON_ID_DESTINATION), iconOffset(new Float[]{0f, -8f})
@@ -353,6 +357,12 @@ public class RouteActivity extends AppCompatActivity implements OnMapReadyCallba
 
                 currentRoute = response.body().routes().get(0);
 
+                if (currentRoute != null) {
+                    distance = currentRoute.distance().intValue();
+                    formulaCost = ((distance / 1000) * 0.1) + 0.3 + (((distance / 1000) * 0.1) + 0.3) * 0.25;
+                    carpoolCost = String.format("%.2f", formulaCost);
+                }
+
                 if (style.isFullyLoaded()) {
                     GeoJsonSource geoJsonSource = style.getSourceAs(ROUTE_SOURCE_ID);
 
@@ -389,6 +399,11 @@ public class RouteActivity extends AppCompatActivity implements OnMapReadyCallba
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(RouteActivity.this, ConfirmRideActivity.class);
+
+                intent.putExtra("ORIGIN_LOCATION_STRING_KEY", originTextView.getText());
+                intent.putExtra("DESTINATION_LOCATION_STRING_KEY", destinationTextView.getText());
+                intent.putExtra("COST_STRING_KEY", carpoolCost);
+
                 startActivity(intent);
             }
         });

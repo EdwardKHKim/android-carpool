@@ -52,6 +52,7 @@
                     android:layout_centerVertical="true"/>
 
                 <TextView
+                    android:id="@+id/origin_text_view_activity_confirm_ride"
                     android:layout_toEndOf="@+id/origin_icon_cardview_drive"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -92,6 +93,7 @@
                     android:layout_centerVertical="true"/>
 
                 <TextView
+                    android:id="@+id/destination_text_view_activity_confirm_ride"
                     android:layout_toEndOf="@+id/destination_icon_cardview_drive"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -103,6 +105,40 @@
 
             </RelativeLayout>
 
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/wallet_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_wallet" />
+
+            <TextView
+                android:id="@+id/cost_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/wallet_image"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:textSize="15sp"
+                android:fontFamily="@font/nunito_sans_semibold"
+                android:textColor="#000000"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/cost_text_view"
+                android:layout_marginStart="20dp"
+                android:textSize="15sp"
+                android:fontFamily="@font/nunito_sans_semibold"
+                android:textColor="#000000"
+                android:layout_centerVertical="true"
+                android:text="CAD"/>
         </RelativeLayout>
 
 

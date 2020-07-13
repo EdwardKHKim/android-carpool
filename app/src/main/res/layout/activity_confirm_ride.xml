@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/icon_car_activity_confirm_ride"
         android:layout_marginTop="20dp"
-        android:layout_above="@+id/confirm_button"
+        android:layout_above="@+id/confirm_click"
         android:layout_marginBottom="20dp">
 
         <RelativeLayout
@@ -145,7 +145,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/confirm_button"
+        android:id="@+id/confirm_click"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentBottom="true"

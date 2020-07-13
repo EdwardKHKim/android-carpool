@@ -34,68 +34,109 @@
                 android:layout_marginStart="25dp">
 
                 <RelativeLayout
-                    android:id="@+id/origin_cardview_drive"
+                    android:id="@+id/route_cardview_drive"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
-                    <ImageView
-                        android:id="@+id/origin_icon_cardview_drive"
-                        android:layout_width="10dp"
-                        android:layout_height="10dp"
-                        android:src="@drawable/ic_square"
-                        android:tint="#000000"
-                        android:layout_centerVertical="true"/>
-
-                    <TextView
-                        android:layout_toEndOf="@+id/origin_icon_cardview_drive"
+                    <RelativeLayout
+                        android:id="@+id/origin_cardview_drive"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Coquitlam"
-                        android:layout_marginStart="20dp"
-                        android:textSize="15sp"
-                        android:fontFamily="@font/nunito_sans_semibold"
-                        android:textColor="#000000"/>
+                        android:layout_height="wrap_content">
 
-                </RelativeLayout>
+                        <ImageView
+                            android:id="@+id/origin_icon_cardview_drive"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:src="@drawable/ic_square"
+                            android:tint="#000000"
+                            android:layout_centerVertical="true"/>
 
-                <RelativeLayout
-                    android:layout_width="10dp"
-                    android:layout_height="40dp"
-                    android:layout_centerVertical="true">
+                        <TextView
+                            android:layout_toEndOf="@+id/origin_icon_cardview_drive"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Coquitlam"
+                            android:layout_marginStart="20dp"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/nunito_sans_semibold"
+                            android:textColor="#000000"/>
+
+                    </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/vertical_line_background"
-                        android:layout_centerInParent="true"/>
+                        android:layout_width="10dp"
+                        android:layout_height="45dp"
+                        android:layout_centerVertical="true">
 
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/vertical_line_background"
+                            android:layout_centerInParent="true"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/destination_cardview_drive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/origin_cardview_drive"
+                        android:layout_marginTop="35dp">
+
+                        <ImageView
+                            android:id="@+id/destination_icon_cardview_drive"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:src="@drawable/ic_oval"
+                            android:tint="#000000"
+                            android:layout_centerVertical="true"/>
+
+                        <TextView
+                            android:layout_toEndOf="@+id/destination_icon_cardview_drive"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Metrotown SkyTrain Station"
+                            android:layout_marginStart="20dp"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/nunito_sans_semibold"
+                            android:textColor="#000000"/>
+
+                    </RelativeLayout>
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/destination_cardview_drive"
+                    android:layout_below="@+id/route_cardview_drive"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/origin_cardview_drive"
-                    android:layout_marginTop="35dp">
+                    android:layout_marginTop="10dp">
 
                     <ImageView
-                        android:id="@+id/destination_icon_cardview_drive"
-                        android:layout_width="10dp"
-                        android:layout_height="10dp"
-                        android:src="@drawable/ic_oval"
-                        android:tint="#000000"
-                        android:layout_centerVertical="true"/>
+                        android:id="@+id/wallet_image"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_wallet" />
 
                     <TextView
-                        android:layout_toEndOf="@+id/destination_icon_cardview_drive"
+                        android:id="@+id/cost_text_view_cardview_drive"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Metrotown SkyTrain Station"
+                        android:layout_toEndOf="@id/wallet_image"
+                        android:layout_centerVertical="true"
                         android:layout_marginStart="20dp"
                         android:textSize="15sp"
                         android:fontFamily="@font/nunito_sans_semibold"
                         android:textColor="#000000"/>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/cost_text_view_cardview_drive"
+                        android:layout_marginStart="20dp"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/nunito_sans_semibold"
+                        android:textColor="#000000"
+                        android:layout_centerVertical="true"
+                        android:text="CAD"/>
                 </RelativeLayout>
 
             </RelativeLayout>

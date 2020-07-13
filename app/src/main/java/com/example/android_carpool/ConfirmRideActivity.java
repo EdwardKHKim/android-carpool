@@ -1,8 +1,10 @@
 package com.example.android_carpool;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -65,6 +67,14 @@ public class ConfirmRideActivity extends AppCompatActivity {
     }
 
     private void confirmRide() {
-
+        RelativeLayout confirm = (RelativeLayout) findViewById(R.id.confirm_click);
+        confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ConfirmRideActivity.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+            }
+        });
     }
 }

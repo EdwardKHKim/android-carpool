@@ -2,16 +2,17 @@ package com.example.android_carpool;
 
 public class Ticket {
 
-    public String Origin, Destination, Cost;
+    public String Origin, Destination, Cost, PhoneNumber;
 
     public Ticket() {
 
     }
 
-    public Ticket(String origin, String destination, String cost) {
+    public Ticket(String origin, String destination, String cost, String phoneNumber) {
         this.Origin = origin;
         this.Destination = destination;
         this.Cost = cost;
+        this.PhoneNumber = phoneNumber;
     }
 
     public String getOrigin() {
@@ -36,5 +37,13 @@ public class Ticket {
 
     public void setCost(String cost) {
         Cost = cost;
+    }
+
+    public String getPhoneNumber() {
+        return PhoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        PhoneNumber = phoneNumber;
     }
 }

@@ -3,6 +3,7 @@ package com.example.android_carpool;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -20,10 +21,12 @@ public class ConfirmRideActivity extends AppCompatActivity {
     TextView originText;
     TextView destinationText;
     TextView costText;
+    EditText phoneNumberText;
 
     String origin;
     String destination;
     String cost;
+    String phoneNumber;
 
     String key;
 
@@ -72,10 +75,14 @@ public class ConfirmRideActivity extends AppCompatActivity {
         reference.updateChildren(ticketKey);
         keyReference = reference.child(key);
 
+        phoneNumberText = (EditText) findViewById(R.id.phone_number_activity_confirm_ride);
+        phoneNumber = phoneNumberText.getText().toString();
+
         HashMap<String, Object> map = new HashMap<>();
         map.put("Origin", origin);
         map.put("Destination", destination);
         map.put("Cost", cost);
+        map.put("PhoneNumber", phoneNumber);
 
         keyReference.updateChildren(map);
     }

@@ -141,6 +141,27 @@
                 android:text="CAD"/>
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/border_rectangle_background"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="50dp">
+
+            <EditText
+                android:id="@+id/phone_number_activity_confirm_ride"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:hint="Enter phone number"
+                android:textColor="#000000"
+                android:fontFamily="@font/nunito_sans_semibold"
+                android:inputType="phone"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@android:color/transparent"/>
+        </RelativeLayout>
 
     </RelativeLayout>
 

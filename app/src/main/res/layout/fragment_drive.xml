@@ -4,7 +4,15 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <RelativeLayout
+        android:id="@+id/header_fragment_drive"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+    </RelativeLayout>
+
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/header_fragment_drive"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/cardview_drive"/>

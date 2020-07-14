@@ -4,7 +4,15 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <RelativeLayout
+        android:id="@+id/header_fragment_ride"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+    </RelativeLayout>
+
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/header_fragment_ride"
         android:id="@+id/ride_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

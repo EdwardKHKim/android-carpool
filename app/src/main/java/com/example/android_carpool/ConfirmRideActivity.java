@@ -23,10 +23,10 @@ public class ConfirmRideActivity extends AppCompatActivity {
     TextView costText;
     EditText phoneNumberText;
 
-    String origin;
-    String destination;
-    String cost;
-    String phoneNumber;
+    String originStr;
+    String destinationStr;
+    String costStr;
+    String phoneNumberStr;
 
     String key;
 
@@ -51,22 +51,22 @@ public class ConfirmRideActivity extends AppCompatActivity {
     private void originText() {
         originText = (TextView) findViewById(R.id.origin_text_view_activity_confirm_ride);
         Bundle bundle = getIntent().getExtras();
-        origin = bundle.getString("ORIGIN_LOCATION_STRING_KEY");
-        originText.setText(origin);
+        originStr = bundle.getString("ORIGIN_LOCATION_STRING_KEY");
+        originText.setText(originStr);
     }
 
     private void destinationText() {
         destinationText = (TextView) findViewById(R.id.destination_text_view_activity_confirm_ride);
         Bundle bundle = getIntent().getExtras();
-        destination = bundle.getString("DESTINATION_LOCATION_STRING_KEY");
-        destinationText.setText(destination);
+        destinationStr = bundle.getString("DESTINATION_LOCATION_STRING_KEY");
+        destinationText.setText(destinationStr);
     }
 
     private void costText() {
         costText = (TextView) findViewById(R.id.cost_text_view);
         Bundle bundle = getIntent().getExtras();
-        cost = bundle.getString("COST_STRING_KEY");
-        costText.setText(cost);
+        costStr = bundle.getString("COST_STRING_KEY");
+        costText.setText(costStr);
     }
 
     private void saveData() {
@@ -76,13 +76,13 @@ public class ConfirmRideActivity extends AppCompatActivity {
         keyReference = reference.child(key);
 
         phoneNumberText = (EditText) findViewById(R.id.phone_number_activity_confirm_ride);
-        phoneNumber = phoneNumberText.getText().toString();
+        phoneNumberStr = phoneNumberText.getText().toString();
 
         HashMap<String, Object> map = new HashMap<>();
-        map.put("Origin", origin);
-        map.put("Destination", destination);
-        map.put("Cost", cost);
-        map.put("PhoneNumber", phoneNumber);
+        map.put("Origin", originStr);
+        map.put("Destination", destinationStr);
+        map.put("Cost", costStr);
+        map.put("PhoneNumber", phoneNumberStr);
 
         keyReference.updateChildren(map);
     }

@@ -1,5 +1,6 @@
 package com.example.android_carpool;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,15 +54,14 @@ public class DriveFragment extends Fragment {
 
         Query query = reference.limitToLast(50);
 
-        FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<TicketDrive>()
-                .setQuery(query, TicketDrive.class)
+        FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<Ticket>()
+                .setQuery(query, Ticket.class)
                 .build();
 
-        FirebaseRecyclerAdapter<TicketDrive, TicketViewHolder> firebaseRecyclerAdapter
-                = new FirebaseRecyclerAdapter<TicketDrive, TicketViewHolder>(options) {
+        FirebaseRecyclerAdapter<Ticket, TicketViewHolder> firebaseRecyclerAdapter
+                = new FirebaseRecyclerAdapter<Ticket, TicketViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull TicketViewHolder ticketViewHolder, int i, @NonNull TicketDrive ticketDrive) {
-                String id = getRef(i).getKey();
+            protected void onBindViewHolder(@NonNull TicketViewHolder ticketViewHolder, int i, @NonNull Ticket ticketDrive) {
                 reference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -69,6 +69,18 @@ public class DriveFragment extends Fragment {
                             ticketViewHolder.origin.setText(ticketDrive.getOrigin());
                             ticketViewHolder.destination.setText(ticketDrive.getDestination());
                             ticketViewHolder.cost.setText(ticketDrive.getCost());
+                            ticketViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    String id = getRef(i).getKey();
+                                    Intent intent = new Intent(getActivity(), ConfirmDriveActivity.class);
+                                    intent.putExtra("id", id);
+                                    intent.putExtra("ORIGIN_LOCATION_STRING_KEY", ticketDrive.getOrigin());
+                                    intent.putExtra("DESTINATION_LOCATION_STRING_KEY", ticketDrive.getDestination());
+                                    intent.putExtra("COST_STRING_KEY", ticketDrive.getCost());
+                                    startActivity(intent);
+                                }
+                            });
                         }
                     }
 
@@ -100,7 +112,7 @@ public class DriveFragment extends Fragment {
             super(itemView);
             origin = itemView.findViewById(R.id.origin_cardview_drive_text);
             destination = itemView.findViewById(R.id.destination_cardview_drive_text);
-            cost = itemView.findViewById(R.id.cost_cardview_drive_text);
+            cost = itemView.findViewById(R.id.cost_text_view_cardview_drive);
         }
     }
 }

@@ -51,6 +51,7 @@
                             android:layout_centerVertical="true"/>
 
                         <TextView
+                            android:id="@+id/origin_cardview_ride_text"
                             android:layout_toEndOf="@+id/origin_icon_cardview_ride"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -91,6 +92,7 @@
                             android:layout_centerVertical="true"/>
 
                         <TextView
+                            android:id="@+id/destination_cardview_ride_text"
                             android:layout_toEndOf="@+id/destination_icon_cardview_ride"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -130,7 +132,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/cost_text_view_cardview_ride"
-                        android:layout_marginStart="20dp"
+                        android:layout_marginStart="10dp"
                         android:textSize="15sp"
                         android:fontFamily="@font/nunito_sans_semibold"
                         android:textColor="#000000"

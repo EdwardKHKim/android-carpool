@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".RouteActivity" />
         <activity android:name=".ConfirmRideActivity" />
+        <activity android:name=".ConfirmDriveActivity" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

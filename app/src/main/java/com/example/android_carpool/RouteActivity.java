@@ -64,18 +64,10 @@ public class RouteActivity extends AppCompatActivity implements OnMapReadyCallba
     private MapboxDirections client;
     private DirectionsRoute currentRoute;
 
-    Point originPoint;
-    Double originLatitude;
-    Double originLongitude;
-    TextView originTextView;
-
-    Point destinationPoint;
-    Double destinationLatitude;
-    Double destinationLongitude;
-    TextView destinationTextView;
-
+    Point originPoint, destinationPoint;
+    Double originLatitude, originLongitude, destinationLatitude, destinationLongitude, formulaCost;
+    TextView originTextView, destinationTextView;
     int distance;
-    Double formulaCost;
     String carpoolCost;
 
     private static final int REQUEST_CODE_AUTOCOMPLETE_ORIGIN = 1;

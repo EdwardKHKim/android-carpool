@@ -1,14 +1,14 @@
 package com.example.android_carpool;
 
-public class TicketDrive {
+public class Ticket {
 
     private  String Origin, Destination, Cost, PhoneNumber;
 
-    public TicketDrive() {
+    public Ticket() {
 
     }
 
-    public TicketDrive(String origin, String destination, String cost, String phoneNumber) {
+    public Ticket(String origin, String destination, String cost, String phoneNumber) {
         this.Cost = cost;
         this.Destination = destination;
         this.Origin = origin;

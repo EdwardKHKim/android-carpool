@@ -91,7 +91,8 @@ public class ConfirmDriveActivity extends AppCompatActivity {
     }
 
     private void deleteData() {
-
+        reference = FirebaseDatabase.getInstance().getReference().child("Ticket");
+        reference.setValue(null);
     }
 
     private void confirmDrive() {

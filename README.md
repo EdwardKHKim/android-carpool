@@ -42,6 +42,7 @@ You can either use your own Android device or the Emulators provided in Android 
 1. Open AVD Manager
 2. Create Virtual Device...
 
+## Attributions
 The folowing sets forth attribution notices for vector drawables from third party that are contained in this repository. 
 - Icon made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](www.flaticon.com)
 - Icon made by [Good Ware](https://www.flaticon.com/authors/good-ware) from [www.flaticon.com](www.flaticon.com)

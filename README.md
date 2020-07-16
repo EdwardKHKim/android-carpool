@@ -4,6 +4,8 @@ The repository contains an Android native mobile application that allows users t
 
 ## Demo
 
+![Demo](https://github.com/EdwardKHKim/android_carpool/blob/master/android_carpool_demo.gif)
+
 ## Development Requirements
 #### Android Studio 
 1. Download and install [Android Studio](https://developer.android.com/studio).

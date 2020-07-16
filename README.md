@@ -15,8 +15,16 @@ The repository contains
 1. 
 
 ## Installation Instructions
-1. Clone this repository
-   - If 
+1. Make directory named AndroidStudioProjects. 
+```
+cd
+mkdir AndroidStudioProjects
+cd AndroidStudioProjects
+```
+2. Clone this repository into AndroidStudioProjects.
+```
+git clone 
+```
 
 ## TODO 
 

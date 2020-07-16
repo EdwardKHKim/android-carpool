@@ -6,21 +6,6 @@ The repository contains an Android native mobile application that allows users t
 
 ![Demo](https://github.com/EdwardKHKim/android_carpool/blob/master/android_carpool_demo.gif)
 
-## Development Requirements
-#### Android Studio 
-1. Download and install [Android Studio](https://developer.android.com/studio).
-
-#### Mapbox 
-1. Sign up for [Mapbox](https://www.mapbox.com/).
-2. Get your access token. 
-
-#### Google Firebase 
-1. 
-
-#### Emulator 
-1. Open AVD Manager
-2. Create Virtual Device...
-
 ## Installation Instructions
 1. Make directory named AndroidStudioProjects. 
 ```
@@ -32,7 +17,15 @@ cd AndroidStudioProjects
 ```
 git clone https://github.com/EdwardKHKim/android_carpool.git
 ```
-3. Add Mapbox access token in /res/values/strings.xml 
+
+## Development Requirements
+#### Android Studio 
+1. Download and install [Android Studio](https://developer.android.com/studio).
+
+#### Mapbox 
+This project use Mapbox APK 
+1. Sign up for [Mapbox](https://www.mapbox.com/).
+2. Get your access token and add in /res/values/strings.xml 
 ```
 <resources>
   ...
@@ -40,9 +33,14 @@ git clone https://github.com/EdwardKHKim/android_carpool.git
   ...
 </resources> 
 ```
-4. 
 
-## TODO 
+#### Google Firebase 
+This project use Google Firebase Real-time Database as the back end. The 
+
+#### Emulator 
+You can either use your own Android device or the Emulators provided in Android Studio. To use an Emulator from Android Studio
+1. Open AVD Manager
+2. Create Virtual Device...
 
 ## Attributions
 - 

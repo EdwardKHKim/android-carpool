@@ -1,6 +1,6 @@
 # Android Carpool
 
-The repository contains an Android native mobile application that allows users to 
+The repository contains an Android native mobile application that allows users (riders) to list a route they would like to carpool in and users (drivers) to select a listed route that they are driving in. The cost function is calculated using a rate that is below the gas price of the ride following British Columbia carpool regulation. 
 
 ## Demo
 
@@ -30,6 +30,14 @@ This project use Mapbox APK
 <resources>
   ...
   <string name="mapbox_access_token">YOUR_MAPBOX_ACCESS_TOKEN</string>
+  ...
+</resources> 
+```
+3. You can create a custom style map and add it in /res/values/strings.xml 
+```
+<resources>
+  ...
+  <string name="mapbox_style">YOUR_CUSTOM_STYLE_URL</string>
   ...
 </resources> 
 ```

@@ -43,5 +43,4 @@ You can either use your own Android device or the Emulators provided in Android 
 2. Create Virtual Device...
 
 ## Attributions
-This repository contains
-- 
+This repository cotains vector drawables from other sources

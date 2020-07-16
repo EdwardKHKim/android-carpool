@@ -1,6 +1,6 @@
 # Android Carpool
 
-The repository contains an Android native mobile application 
+The repository contains an Android native mobile application that allows users to 
 
 ## Demo
 
@@ -16,7 +16,8 @@ The repository contains an Android native mobile application
 1. 
 
 #### Emulator 
-1. 
+1. Open AVD Manager
+2. Create Virtual Device...
 
 ## Installation Instructions
 1. Make directory named AndroidStudioProjects. 
@@ -42,3 +43,4 @@ git clone https://github.com/EdwardKHKim/android_carpool.git
 ## TODO 
 
 ## Attributions
+- 

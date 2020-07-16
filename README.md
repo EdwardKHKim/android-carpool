@@ -35,7 +35,7 @@ This project use Mapbox APK
 ```
 
 #### Google Firebase 
-This project use Google Firebase Real-time Database as the back end. The 
+This project use Google Firebase Real-time Database as the back end. The repository includes the google-services.json file but you can also add Firebase to this project using your own Google account by following [this instruction](https://firebase.google.com/docs/android/setup).
 
 #### Emulator 
 You can either use your own Android device or the Emulators provided in Android Studio. To use an Emulator from Android Studio
@@ -43,4 +43,5 @@ You can either use your own Android device or the Emulators provided in Android 
 2. Create Virtual Device...
 
 ## Attributions
+This repository contains
 - 

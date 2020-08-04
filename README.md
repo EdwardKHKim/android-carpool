@@ -1,4 +1,4 @@
-# Android Carpool
+# What is Carpool?
 
 The repository contains an Android native mobile application that allows users (riders) to list a route they would like to carpool in and users (drivers) to select a listed route that they are driving in. The cost function is calculated using a rate that is below the gas price of the ride following British Columbia carpool regulation. 
 
